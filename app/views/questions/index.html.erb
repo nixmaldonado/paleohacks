@@ -1,3 +1,8 @@
+<%= link_to "Have a Question?", new_question_path %>
+
+
+<hr>
+
 <% @questions.each do |question|%>
   <strong>
     <%= link_to "#{question.title}", question_path(question)  %>
