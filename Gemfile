@@ -18,3 +18,6 @@ end
 
 gem 'devise'
 gem 'better_errors'
+gem 'kaminari'
+gem 'bootstrap-sass'
+

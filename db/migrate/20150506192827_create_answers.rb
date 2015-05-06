@@ -4,6 +4,7 @@ class CreateAnswers < ActiveRecord::Migration
       t.text :body
       t.boolean :correct
       t.belongs_to :question, index: true, foreign_key: true
+      t.belongs_to :user, index: true, foreign_key: true
       t.integer :votes
 
       t.timestamps null: false

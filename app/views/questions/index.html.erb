@@ -1,0 +1,7 @@
+<% @questions.each do |question|%>
+  <strong>
+    <%= link_to "#{question.title}", question_path(question)  %>
+  </strong>
+  <%= question.body %>
+  <hr>
+<% end -%>
