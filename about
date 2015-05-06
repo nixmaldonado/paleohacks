@@ -1,0 +1,17 @@
+- Un usuario puede registrarse
+
+- Un usuario puede crear una pregunta y asignarle un topico
+
+- Una pregunta puede tener varias respuestas
+
+- Una pregunta puede ser votada negativa o positivamente
+
+- Una respuesta puede ser votada negativa o positivamente
+
+- Solamente una respuesta de una pregunta puede ser marcada como correcta
+
+- Cuando visito el perfil de un usuario puedo ver todas las preguntas hechas por ese usuario
+
+- Cuando visito una pregunta, puedo ver las respuestas, quien fue el usuario que respondio, la fecha de creacion de la respuesta
+
+- Si la pregunta tiene una respuesta marcada como correcta, esa respuesta tiene que ser la primera en mostrarse
