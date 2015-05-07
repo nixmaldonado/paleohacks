@@ -43,11 +43,11 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:topic).permit(:body, :title)
+    params.require(:question).permit(:body, :title)
   end
 
   def get_current_question
-    @question = Topic.find(params[:id])
+    @question = Question.find(params[:id])
   end
 
 end
