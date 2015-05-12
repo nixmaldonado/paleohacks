@@ -7,4 +7,5 @@ class Question < ActiveRecord::Base
   validates :body, :title, presence: true
 
   attr_accessor :topic_id
+
 end

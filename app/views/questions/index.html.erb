@@ -8,5 +8,7 @@
     <%= link_to "#{question.title}", question_path(question)  %>
   </strong>
   <%= question.body %>
+  <% t = @topic.find("#{question.id}") %>
+  <%= link_to "#{t.topic.name}", topic_path(t.topic.id) %>
   <hr>
 <% end -%>

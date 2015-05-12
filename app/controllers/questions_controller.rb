@@ -5,6 +5,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+    @topic     = QuestionTopic.all
   end
 
   def show
@@ -41,6 +42,11 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     redirect_to questions_path
+  end
+
+  def upvote_question
+    current_user.upvote_question!(@question)
+    redirect_to questions_path(@question), notice: "Question Upvoted!"
   end
 
   private

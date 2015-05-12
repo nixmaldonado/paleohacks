@@ -7,5 +7,22 @@ class User < ActiveRecord::Base
 has_many :questions
 has_many :answers
 
+def upvote_question!(question)
+   question.vote = true
+end
+
+def downvote_question!(question)
+  question.vote = false
+end
+
+
+def upvote_answer!(answer)
+  vote = true
+end
+
+def downvote_answer!(answer)
+  vote = false
+end
+
 
 end

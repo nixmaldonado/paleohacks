@@ -1,0 +1,4 @@
+<% @questionTopics.each do |questionTopic| %>
+  <% @question = Question.find_by(questionTopic.question_id) %>
+  <%= link_to "#{@question.title}", question_path(@question.id) %>
+<% end -%>
