@@ -1,24 +1,53 @@
 
-ActiveRecord::Schema.define(version: 20150507150942) do
+ActiveRecord::Schema.define(version: 20150507161437) do
+
+  create_table "answer_votes", force: :cascade do |t|
+    t.boolean  "vote"
+    t.integer  "user_id"
+    t.integer  "answer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "answer_votes", ["answer_id"], name: "index_answer_votes_on_answer_id"
+  add_index "answer_votes", ["user_id"], name: "index_answer_votes_on_user_id"
 
   create_table "answers", force: :cascade do |t|
     t.text     "body"
-    t.boolean  "correct"
+    t.boolean  "correct",     default: false
     t.integer  "question_id"
     t.integer  "user_id"
-    t.integer  "votes"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "answers", ["question_id"], name: "index_answers_on_question_id"
   add_index "answers", ["user_id"], name: "index_answers_on_user_id"
 
+  create_table "question_topics", force: :cascade do |t|
+    t.integer  "question_id"
+    t.integer  "topic_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "question_topics", ["question_id"], name: "index_question_topics_on_question_id"
+  add_index "question_topics", ["topic_id"], name: "index_question_topics_on_topic_id"
+
+  create_table "question_votes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "question_votes", ["question_id"], name: "index_question_votes_on_question_id"
+  add_index "question_votes", ["user_id"], name: "index_question_votes_on_user_id"
+
   create_table "questions", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
     t.integer  "user_id"
-    t.integer  "votes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,13 +55,10 @@ ActiveRecord::Schema.define(version: 20150507150942) do
   add_index "questions", ["user_id"], name: "index_questions_on_user_id"
 
   create_table "topics", force: :cascade do |t|
-    t.string   "topic"
-    t.integer  "question_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "topic" # cambiar name
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "topics", ["question_id"], name: "index_topics_on_question_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

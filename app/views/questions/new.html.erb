@@ -1,6 +1,10 @@
 <div class="form-horizontal col-md-offset-2 col-md-8 ">
   <%= form_for @question do |f| %>
 
+
+    <%= f.select :topic_id, options_from_collection_for_select(@topics, :id, :topic) %>
+
+
     <div class="form-group">
       <label class="control-label"> Title: </label>
       <%= f.text_field :title, class: "form-control" %>
@@ -11,10 +15,7 @@
       <%= f.text_area :body, class: "form-control" %>
     </div>
 
-    <div class="form-group">
-     <label class="control-label">Topics:</label>
-     <%= f.text_field :topic, class: "form-control" %>
-    </div>
+
 
     <%= f.submit "Deploy", class: "btn btn-default"  %>
     <%= link_to "Cancel", root_path, class: "btn btn-danger" %>

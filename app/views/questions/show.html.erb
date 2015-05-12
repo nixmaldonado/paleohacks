@@ -1,3 +1,6 @@
 <%= @question.title %><br>
 <%= @question.body %><br>
-<%= @question.topic %>
+
+<% @question.topics.each do |topic| %>
+  <%= topic.topic %>
+<% end -%>

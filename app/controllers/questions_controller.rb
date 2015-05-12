@@ -13,12 +13,15 @@ class QuestionsController < ApplicationController
 
   def new
     @question = current_user.questions.build
+    @topics = Topic.all
   end
 
   def create
     @question = current_user.questions.new(question_params)
+    @topic = Topic.find(params[:question][:topic_id])
 
-    if @question.save
+    if @topic && @question.save
+      @question.topics << @topic
       redirect_to questions_path, notice: "Question Posted Succesfully"
     else
       render :new
