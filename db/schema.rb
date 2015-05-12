@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150507161437) do
   add_index "question_topics", ["topic_id"], name: "index_question_topics_on_topic_id"
 
   create_table "question_votes", force: :cascade do |t|
+    t.boolean  "vote"
     t.integer  "user_id"
     t.integer  "question_id"
     t.datetime "created_at",  null: false
@@ -55,7 +56,7 @@ ActiveRecord::Schema.define(version: 20150507161437) do
   add_index "questions", ["user_id"], name: "index_questions_on_user_id"
 
   create_table "topics", force: :cascade do |t|
-    t.string   "topic" # cambiar name
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
