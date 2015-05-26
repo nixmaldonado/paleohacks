@@ -1,0 +1,101 @@
+Simple Problems
+
+A.1 Factorial
+
+Write a program which takes a single argument, computes the factorial and prints the value on the screen.
+1
+2
+
+$ factorial 5
+5! = 120
+
+Ext 1: Change the program so that it computes the factorial iteratively and recursively.
+
+Ext 2: Change the program so that it is interactive instead of terminating after each computation and that it uses a table of previous values to improve the performance.
+A.2 Currency Calculator
+
+Write a program which takes a decimal value and two ISO 4217 currency codes and computes the value of the other currency given a fixed conversion rate. If one of the currency codes is not known the program should print an error. When run without any arguments the program should print some usage information including a list of all known currency codes for which it has conversion rates.
+1
+2
+
+$ convert 112.34 USD EUR
+112.34 USD = 84.50 EUR (Conversion rate: 1 USD = 0.7522 EUR)
+
+A.3 Roll the Dice
+
+Write a program which simulates one or more dice with values from 1 to 6. The program takes a single argument which is the number of dice. The output should contain the values of the dice and the probability for this combination to occur. The probability is expressed as a decimal value between 0 and 1 with three decimal points.
+1
+2
+3
+
+$ roll-the-dice 3
+Rolling 3 dice ...
+4 2 8 (Probability: 0.473)
+
+Ext 1: Extend the program so that it can roll dice with any number of sides greater than 1.
+A.4 Reverse the Input
+
+Write a program which reads a number of strings from standard input and prints them in reverse order on the screen. The input sequence is terminated with the string END.
+1
+2
+3
+4
+5
+6
+7
+8
+
+$ reverse-strings
+one
+two
+three
+END
+-> three
+-> two
+-> one
+
+A.5 Count Words and Lines
+
+Write a program which reads the contents of a file and which counts the number of words and lines in that file.
+1
+2
+
+$ count-words-and-lines file.txt
+file.txt contains 525 words in 23 lines
+
+A.6 Min and Max
+
+Write a program which accepts numbers as arguments and which determines the lowest and highest number.
+1
+2
+3
+4
+
+$ min-max 1 10 99 5 19 -23 17
+Read 7 numbers
+Min value: -23
+Max value: 99
+Intermediate Problems
+
+B.1 Calculator
+
+Write a calculator which evaluates expressions with decimal numbers and the operators +, -, *, / and prints the result on the screen.
+1
+2
+
+$ calc 7 + 3 * 5
+7 + 3 * 5 = 22
+
+B.2 Bubblesort
+
+Write a program which reads strings from standard input and sorts them using the Bubblesort algorithm. Determine the execution time with 10, 1000, 1000000 entries using time.
+1
+
+$ time cat 1000-strings | bubblesort
+Difficult Problems
+
+C.1 Goat-Wolf-Salad
+
+A goat, a wolf and a salad are on one side of a river and you need to get them to the other side using your boat. You can carry one item in your boat to the other side at any given time. However, when the goat and the wolf are left alone the wolf will eat the goat. If the goat and the salad are left alone the goat will eat the salad. As long as you are with them nothing will happen, i.e. the wolf won’t eat the goat and the goat won’t eat the salad.
+
+Write a program which determines algorithmically an order in which you carry them all to the other side.

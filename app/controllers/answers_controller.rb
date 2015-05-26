@@ -4,6 +4,10 @@ before_action :authenticate_user!, except: [:show, :index]
 before_action :get_current_question
 before_action :get_current_answer, only: [:show, :edit, :update, :destroy]
 
+def new
+  @answer = current_user.answers.new
+end
+
 def create
   @answer = current_user.answers.new(answer_params)
   @answer.question_id = @question.id
@@ -11,14 +15,11 @@ def create
   redirect_to question_path(@question)
 end
 
-def new
-  @answer = current_user.answers.new
-end
 
 private
 
   def get_current_question
-    @question = Question.find(params[:id])
+    @question = Question.find(params[:question_id])
   end
 
   def get_current_answer

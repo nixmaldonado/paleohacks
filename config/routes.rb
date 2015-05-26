@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :questions do
     resources :answers
     member do
-      put :upvote_question
-      put :downvote_question
+      put :upvote
+      put :downvote
     end
   end
 

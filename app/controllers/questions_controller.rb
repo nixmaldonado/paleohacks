@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
 
   before_action :authenticate_user!, except: [:show, :index ]
-  before_action :get_current_question, only: [:show, :edit, :update, :destroy]
+  before_action :get_current_question, only: [:upvote, :downvote, :show, :edit, :update, :destroy]
+  before_action :get_current_user, only: [:upvote, :downvote]
 
   def index
     @questions = Question.all
@@ -44,12 +45,21 @@ class QuestionsController < ApplicationController
     redirect_to questions_path
   end
 
-  def upvote_question
+  def upvote
     current_user.upvote_question!(@question)
-    redirect_to questions_path(@question), notice: "Question Upvoted!"
+    redirect_to question_path(@question)
+  end
+
+  def downvote
+    current_user.downvote_question!(@question)
+    redirect_to question_path(@question)
   end
 
   private
+
+  def get_current_user
+    @user = current_user
+  end
 
   def question_params
     params.require(:question).permit(:body, :title)

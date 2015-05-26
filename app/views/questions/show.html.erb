@@ -5,5 +5,22 @@ Body: <%= @question.body %><br>
 Topic: <%= topic.name %>
 <% end -%>
 
-<%= link_to "Upvote",  upvote_question_question_path, method: :put %>
-<%= link_to "Downvote", downvote_question_question_path, method: :put %>
+<br>
+
+  <% if current_user && current_user.upvoted_question?(@question)%>
+    <%= link_to "Downvote", downvote_question_path, method: :put %>
+  <% elsif current_user && current_user.downvoted_question?(@question) %>
+    <%= link_to "Upvote", upvote_question_path, method: :put %>
+  <% else %>
+    <%= link_to "Downvote", downvote_question_path, method: :put %>
+    <%= link_to "Upvote", upvote_question_path, method: :put %>
+  <% end -%>
+
+<br>
+<%= "Votes: #{@question.vote_count}" %>
+
+<%if @question.answers.any? %>
+<%= render partial: "questions/answers", locals: {question: @question, answers: @question.answers} %>
+<% end -%>
+
+<%= render partial: "questions/form", locals: {question: @question, answers: @question.answers} %>

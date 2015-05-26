@@ -1,0 +1,12 @@
+<hr>
+<% answers.each do |answer| %>
+  <% unless answer.new_record? %>
+    <div class="list-group comments">
+      <div class="list-group-item">
+        <p><%= answer.user.email %> said:</p>
+        <p><%= answer.body %></p>
+        <p class="comment-detail"><%= time_ago_in_words(answer.created_at) %> ago</p>
+      </div>
+    </div>
+  <% end -%>
+<% end -%>

@@ -8,7 +8,7 @@ class TopicsController < ApplicationController
 
   def show
     @questionTopics    = QuestionTopic.where(topic_id: "#{@topic.id}")
-    #@question        = Question.find("#{@questionsTopics.question_id}")
+    #@question         = Question.find("#{@questionsTopics.question_id}")
   end
 
   private
