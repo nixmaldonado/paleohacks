@@ -4,7 +4,10 @@ class Answer < ActiveRecord::Base
   has_many   :answer_votes
 
   validates  :body, presence: true
-  validates  :correct , uniqueness: { scope: :question_id}
+
+  def check_correct
+    correct_ans = user.answers.find_by(correct: true)
+  end
 
   def vote_count
     positives = 0
@@ -20,5 +23,7 @@ class Answer < ActiveRecord::Base
 
   positives - negatives
   end
+
+
 
 end

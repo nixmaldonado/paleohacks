@@ -11,7 +11,7 @@ x Una respuesta puede ser votada negativa o positivamente
 x Cuando visito una pregunta, puedo ver las respuestas, quien fue el usuario que
  respondio, la fecha de creacion de la respuesta
 
-- Cuando visito el perfil de un usuario puedo ver todas las preguntas hechas por
+x Cuando visito el perfil de un usuario puedo ver todas las preguntas hechas por
  ese usuario(cualquiera puede visitarlos)
 
 - Solamente una respuesta de una pregunta puede ser marcada como correcta(por el admin o el propietario)

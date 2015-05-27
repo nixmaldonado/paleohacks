@@ -1,9 +1,5 @@
 <% @users.each do |user| %>
   <br>
-  <%= user.email %><br>
-  <% user.answers.each do |answer| %>
-    body: <%= answer.body %> <br>
-   <%= "votes: #{answer.vote_count}"  %>
-  <% end -%>
+  <%= link_to user.email, user_path(user) %><br>
   <hr>
 <% end -%>

@@ -1,0 +1,6 @@
+<p><%= @user.email %></p><hr>
+<% @user.answers.each do |answer| %>
+  <p><%= answer.body %></p>
+  <p><%= time_ago_in_words(answer.created_at) %> ago </p>
+  <hr>
+<% end -%>
