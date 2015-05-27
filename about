@@ -1,17 +1,20 @@
-x - Un usuario puede registrarse
+x Un usuario puede registrarse
 
-x - Un usuario puede crear una pregunta y asignarle un topico
+x Un usuario puede crear una pregunta y asignarle un topico
 
-- Una pregunta puede tener varias respuestas
+x Una pregunta puede tener varias respuestas
 
-- Una pregunta puede ser votada negativa o positivamente
+x Una pregunta puede ser votada negativa o positivamente
 
-- Una respuesta puede ser votada negativa o positivamente
+x Una respuesta puede ser votada negativa o positivamente
 
-- Solamente una respuesta de una pregunta puede ser marcada como correcta
+x Cuando visito una pregunta, puedo ver las respuestas, quien fue el usuario que
+ respondio, la fecha de creacion de la respuesta
 
-- Cuando visito el perfil de un usuario puedo ver todas las preguntas hechas por ese usuario
+- Cuando visito el perfil de un usuario puedo ver todas las preguntas hechas por
+ ese usuario(cualquiera puede visitarlos)
 
-- Cuando visito una pregunta, puedo ver las respuestas, quien fue el usuario que respondio, la fecha de creacion de la respuesta
+- Solamente una respuesta de una pregunta puede ser marcada como correcta(por el admin o el propietario)
 
-- Si la pregunta tiene una respuesta marcada como correcta, esa respuesta tiene que ser la primera en mostrarse en la lista
+- Si la pregunta tiene una respuesta marcada como correcta, esa respuesta
+tiene que ser la primera en mostrarse en la lista

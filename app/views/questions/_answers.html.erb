@@ -6,6 +6,23 @@
         <p><%= answer.user.email %> said:</p>
         <p><%= answer.body %></p>
         <p class="comment-detail"><%= time_ago_in_words(answer.created_at) %> ago</p>
+
+            <% if current_user && current_user.upvoted_answer?(answer)%>
+              <%= link_to "Downvote", downvote_question_answer_path(@question, answer),
+                                                               method: :put %>
+            <% elsif current_user && current_user.downvoted_answer?(answer) %>
+              <%= link_to "Upvote", upvote_question_answer_path(@question, answer), method: :put %>
+            <% else %>
+
+              <%= link_to "Downvote", downvote_question_answer_path(@question, answer),
+                                                                method: :put %>
+              <%= link_to "Upvote", upvote_question_answer_path(@question, answer),
+                                                                method: :put %>
+            <% end -%>
+
+            <br>
+            <%= "Votes: #{answer.vote_count}" %>
+
       </div>
     </div>
   <% end -%>

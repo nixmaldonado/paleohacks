@@ -1,0 +1,9 @@
+<% @users.each do |user| %>
+  <br>
+  <%= user.email %><br>
+  <% user.answers.each do |answer| %>
+    body: <%= answer.body %> <br>
+   <%= "votes: #{answer.vote_count}"  %>
+  <% end -%>
+  <hr>
+<% end -%>
