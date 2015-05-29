@@ -24,5 +24,9 @@ class Question < ActiveRecord::Base
     positives - negatives
   end
 
+  def owned_by?(current_user)
+    current_user.id == user.id
+  end
+
 
 end

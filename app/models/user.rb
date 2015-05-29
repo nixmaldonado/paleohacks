@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :questions
   has_many :answers
 
+  validates :email, presence: true, uniqueness: true
+
 ## Question Logic
 
   def upvote_question!(question)
@@ -88,10 +90,5 @@ class User < ActiveRecord::Base
       return true
     end
   end
-
-  def correct_answer!(answer)
-
-  end
-
 
 end

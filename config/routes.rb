@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       member do
         put :upvote
         put :downvote
+        put :correct
       end
     end
   end

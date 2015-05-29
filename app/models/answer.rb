@@ -5,8 +5,13 @@ class Answer < ActiveRecord::Base
 
   validates  :body, presence: true
 
-  def check_correct
-    correct_ans = user.answers.find_by(correct: true)
+  def correct!
+    correct_answers = question.answers.where(correct: true)
+    if correct_answers.any?
+      return false
+    else
+      update(correct: true)
+    end
   end
 
   def vote_count
