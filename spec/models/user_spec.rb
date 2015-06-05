@@ -13,4 +13,24 @@ RSpec.describe User, type: :model do
     it { should have_many(:answers) }
   end
 
+# Vote Question test!
+
+  describe '#upvote_question!'do
+    before do
+      @user     = FactoryGirl.create(:user)
+      @question = FactoryGirl.create(:question)
+  end
+
+    context 'when question has no votes' do
+      before do
+        @user.upvote_question!(@question)
+      end
+    end
+
+      it 'upvotes a question' do
+        result = @user.question_votes.find_by_id(@question)
+        expect(result).to eq(@question)
+      end
+  end
+
 end
