@@ -1,28 +1,20 @@
-== README
+x Un usuario puede registrarse
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+x Un usuario puede crear una pregunta y asignarle un topico
 
-Things you may want to cover:
+x Una pregunta puede tener varias respuestas
 
-* Ruby version
+x Una pregunta puede ser votada negativa o positivamente
 
-* System dependencies
+x Una respuesta puede ser votada negativa o positivamente
 
-* Configuration
+x Cuando visito una pregunta, puedo ver las respuestas, quien fue el usuario que
+ respondio, la fecha de creacion de la respuesta
 
-* Database creation
+x Cuando visito el perfil de un usuario puedo ver todas las preguntas hechas por
+ ese usuario(cualquiera puede visitarlos)
 
-* Database initialization
+- Solamente una respuesta de una pregunta puede ser marcada como correcta(por el admin o el propietario)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- Si la pregunta tiene una respuesta marcada como correcta, esa respuesta
+tiene que ser la primera en mostrarse en la lista
